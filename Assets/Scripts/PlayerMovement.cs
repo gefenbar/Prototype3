@@ -32,10 +32,16 @@ public class PlayerMovement : MonoBehaviour
             // Scale x to either positive or negative 1 to 'turn' the character
             transform.localScale = new Vector3(Mathf.Sign(deltaX)/2, 0.5f, 0.5f);
         }
+        /*
+                if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+                {
+                    rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    animator.SetBool("IsJumping", true);
+                }*/
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 }
