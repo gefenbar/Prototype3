@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 92365170}
   - component: {fileID: 92365173}
   m_Layer: 0
-  m_Name: ORK_2 (1)
+  m_Name: ORK_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
