@@ -30,14 +30,14 @@ public class PlayerMovement : MonoBehaviour
         if (!Mathf.Approximately(deltaX, 0.0f))
         {
             // Scale x to either positive or negative 1 to 'turn' the character
-            transform.localScale = new Vector3(Mathf.Sign(deltaX)/2, 0.5f, 0.5f);
+            transform.localScale = new Vector3(Mathf.Sign(deltaX)/2.5f, 0.4f, 0.4f);
         }
-        /*
-                if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                     animator.SetBool("IsJumping", true);
-                }*/
+                }
     }
 
     public void OnLanding()
