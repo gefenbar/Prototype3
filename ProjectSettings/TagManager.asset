@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Meat
   - Ground
+  - Fail
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

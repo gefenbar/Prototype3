@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private int ExtraJump;
     private Rigidbody2D rigidBody;
     public Animator animator;
-   
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -27,12 +27,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = new Vector2(deltaX, rigidBody.velocity.y);
         rigidBody.velocity = movement;
         animator.SetFloat("PlayerSpeed", Mathf.Abs(deltaX));
-      
+
 
         if (!Mathf.Approximately(deltaX, 0.0f))
         {
             // Scale x to either positive or negative 1 to 'turn' the character
-            transform.localScale = new Vector3(Mathf.Sign(deltaX)/3.2f, 0.35f, 0.35f);
+            transform.localScale = new Vector3(Mathf.Sign(deltaX) / 3.2f, 0.35f, 0.35f);
         }
 
         if ((Input.GetKeyDown(KeyCode.Space) && !Jumping) || (Input.GetKeyDown(KeyCode.Space) && ExtraJump > 0))
@@ -45,19 +45,11 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("IsJumping", false);
-            
-        }
-       
-    }
-    private void OnTriggerEnter2D (Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Meat"))
-        {
-            Destroy(other.gameObject);
-
 
         }
+
     }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
